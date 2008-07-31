@@ -1,0 +1,47 @@
+application: 0-0
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /.*
+  script: d.py
+ 
+- url: /favicon\.ico
+  static_files: d-static/favicon.ico
+  upload: d-static/favicon.ico
+
+- url: /robots\.txt
+  static_files: d-static/robots.txt
+  upload: d-static/robots.txt
+ 
+  static_files: static/robots.txt
+0
+   upload: static/robots.txt
+0
+   
+
+
+skip_files: |
+ ^(.*/)?(
+ (app\.yaml)|
+ (app\.yml)|
+ (index\.yaml)|
+ (index\.yml)|
+ (swfs/org)|
+ (swfs/.*?\.(css|html|fla|js|ttf))|
+ (swfs/library.swf)|
+ (swfs/misc.swf)|
+ (swfs/yflexskin.swf)|
+ (#.*#)|
+ (.*~)|
+ (.*\.py[co])|
+ (.*/RCS/.*)|
+ (\..*)|
+ (flash/.*)|
+ ^(flex/.*)|
+ (psd/.*)|
+ (pyamf/tests/.*)|
+ (tools/.*)|
+ )$
+
